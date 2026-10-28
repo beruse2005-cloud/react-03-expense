@@ -1,0 +1,160 @@
+.container {
+    width: 100%;
+    max-width: 720px;
+    padding: 0 16px;
+    color: #1f2937;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.fieldset {
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 16px;
+    background-color: white;
+}
+
+.legend {
+    padding: 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.form {
+    display: flex;
+    gap: 8px;
+}
+
+.select,
+.input,
+.amountInput {
+    height: 40px;
+    padding: 0 12px;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.select:hover,
+.input:hover,
+.amountInput:hover,
+.input:focus,
+.amountInput:focus {
+    outline: 2px solid #2563eb;
+    border-color: #2563eb;
+}
+
+/*
+     select 태그는 기본적으로 갖고 있는 option에서 화면에 출력되는 내용들 중
+     가장 긴게 출력됐을 때의 크기를 최소값으로 가짐
+ */
+
+.input {
+    flex: 1;
+    min-width: 0;
+}
+
+.amountInput {
+    width: 120px;
+}
+
+.addButton {
+    height: 40px;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: #1d4ed8;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #d1d5db;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table thead {
+    background-color: #f3f4f6;
+}
+
+.table th {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.table td.empty {
+    text-align: center;
+    padding: 32px 12px;
+    color: #9ca3af;
+}
+
+.income {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.expense {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.deleteButton {
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #dc2626;
+    background-color: white;
+    border: 1px solid #fca5a5;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color: #fef2f2;
+}
+
+.summary {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: #f3f4f6;
+}
+
+.summaryText {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.balance {
+    margin-top: 8px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+}
