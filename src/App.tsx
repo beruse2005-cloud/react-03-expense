@@ -1,25 +1,34 @@
-import { useState } from "react";
+import { type ChangeEvent, type SubmitEvent, useState } from "react";
 import styles from "./App.module.css";
 
-function App() {
-    const [type, setType] = useState("expense");
-    const [title, setTitle] = useState("");
-    const [amount, setAmount] = useState("");
-    const [list, setList] = useState([]);
+// 가계부 내역 아이템 타입 정의
+type RecordItem = {
+    type: string;
+    title: string;
+    amount: number;
+};
 
-    const handleChangeTitle = event => {
-        setTitle(event.target.value);
+function App(){
+    const [type, setType] = useState<string>("expense");
+    const [title, setTitle] = useState<string>("");
+    const [amount, setAmount] = useState<string>("");
+    // list에 RecordItem 배열 타입 지정
+    const [list, setList] = useState<RecordItem[]>([]);
+
+    const handleChangeTitle = (e: ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
+        setTitle(e.target.value);
     };
 
-    const handleChangeAmount = event => {
-        setAmount(event.target.value);
+    const handleChangeAmount = (e: ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
+        setAmount(e.target.value);
     };
 
-    const handleChangeType = event => {
-        setType(event.target.value);
+    // select 태그에 맞게 ChangeEvent<HTMLSelectElement>로 수정
+    const handleChangeType = (e: ChangeEvent<HTMLSelectElement>) => {
+        setType(e.target.value);
     };
 
-    const handleSubmit = event => {
+    const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const parseAmount = Number(amount);
@@ -42,8 +51,9 @@ function App() {
         setAmount("");
     };
 
-    const handleDelete = index => {
-        const newList = list.filter((item, i) => i !== index);
+    // index 매개변수에 number 타입 명시
+    const handleDelete = (index: number) => {
+        const newList = list.filter((_, i) => i !== index);
         setList(newList);
     };
 
